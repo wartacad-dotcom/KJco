@@ -1,0 +1,31 @@
+title: "1인창업가 아이디어 디벨로퍼"
+description: "혼자 창업을 준비하는 사람을 위한 아이디어 구조화·기획 노하우. 노션+Claude 템플릿으로 아이디어를 실행 가능한 사업계획으로 바꾸는 방법을 공유합니다."
+# GitHub Pages 무료 서브도메인 사용 (커스텀 도메인 미구매)
+# 예: https://<github-user>.github.io/<repo-name>/
+baseurl: "/-"   # 저장소 이름(wartacad-dotcom/-)과 일치
+url: "https://wartacad-dotcom.github.io"
+
+# GitHub Pages 기본 지원 테마 (별도 빌드/설치 불필요, 100% 무료)
+theme: jekyll-theme-minimal
+
+# GitHub Pages는 아래 플러그인들을 별도 설치 없이 지원함 (Gemfile 불필요)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+lang: ko_KR
+timezone: Asia/Seoul
+
+# 상품 결제 링크 (Lemon Squeezy) - 실제 발급된 결제 링크로 교체
+lemonsqueezy_checkout_url: "https://REPLACE_ME.lemonsqueezy.com/buy/REPLACE_PRODUCT_ID"
+
+# 포스트 기본 레이아웃
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+
+markdown: kramdown
