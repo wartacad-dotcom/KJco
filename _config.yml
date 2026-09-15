@@ -2,7 +2,7 @@ title: "1인창업가 아이디어 디벨로퍼"
 description: "혼자 창업을 준비하는 사람을 위한 아이디어 구조화·기획 노하우. 노션+Claude 템플릿으로 아이디어를 실행 가능한 사업계획으로 바꾸는 방법을 공유합니다."
 # GitHub Pages 무료 서브도메인 사용 (커스텀 도메인 미구매)
 # 예: https://<github-user>.github.io/<repo-name>/
-baseurl: "/-"   # 저장소 이름(wartacad-dotcom/-)과 일치
+baseurl: "/KJco"   # 저장소 이름(wartacad-dotcom/KJco)과 일치
 url: "https://wartacad-dotcom.github.io"
 
 # GitHub Pages 기본 지원 테마 (별도 빌드/설치 불필요, 100% 무료)
