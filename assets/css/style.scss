@@ -354,3 +354,59 @@ p:has(> a[href*="lemonsqueezy"]:only-child) {
   color: var(--kj-text-muted);
   margin: 0;
 }
+
+/* ==========================================================================
+   전체 너비 레이아웃 (2026-09-16)
+   테마 기본 구조가 860px 고정폭 + header/footer position:fixed(가운데 정렬
+   계산용 음수 margin 트릭)라서, 화면이 넓을수록 좌우 여백만 커 보였음.
+   position:fixed를 제거하고 CSS Grid로 사이드바(헤더/푸터)+본문 2컬럼
+   레이아웃을 다시 짜서 화면 폭을 실제로 활용하도록 함.
+   (.wrapper 대신 div.wrapper로 써서, 테마의 max-width:960px 미디어쿼리
+   버전(div.wrapper, specificity 더 높음)과도 확실히 이기도록 함)
+   ========================================================================== */
+div.wrapper {
+  width: 92%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-areas:
+    "sidebar-top content"
+    "sidebar-bottom content";
+  column-gap: 3.5rem;
+}
+
+header {
+  grid-area: sidebar-top;
+  position: static;
+  float: none;
+  width: auto;
+}
+
+section {
+  grid-area: content;
+  float: none;
+  width: auto;
+  min-width: 0;
+  padding-bottom: 50px;
+}
+
+footer {
+  grid-area: sidebar-bottom;
+  position: static;
+  float: none;
+  width: auto;
+  align-self: end;
+}
+
+@media (max-width: 780px) {
+  div.wrapper {
+    display: block;
+    width: 90%;
+  }
+
+  header,
+  footer {
+    width: auto;
+  }
+}
