@@ -1,0 +1,171 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* ==========================================================================
+   커스텀 스타일 — "1인창업가 아이디어 디벨로퍼"
+   GitHub Pages 지원 테마(jekyll-theme-minimal) 공식 커스터마이징 방식.
+   theme 값/Gemfile은 건드리지 않고, 테마 CSS 위에 규칙을 덮어씀.
+   방향: 신뢰감 있는 차분한 톤 + 생산성/정리 느낌.
+     - 배경: 따뜻한 오프화이트
+     - 포인트 컬러 1: 딥 슬레이트 네이비 (제목/링크 — 신뢰감)
+     - 포인트 컬러 2: 테라코타 (구매 CTA 전용 — 시선 유도)
+     - 글 목록: 카드형
+   ========================================================================== */
+
+:root {
+  --kj-bg: #faf7f1;
+  --kj-card-bg: #ffffff;
+  --kj-text: #2b2824;
+  --kj-text-muted: #7a7264;
+  --kj-border: #e8e0d2;
+  --kj-accent: #2f4858;
+  --kj-accent-soft: #eef2f3;
+  --kj-cta: #d97a3f;
+  --kj-cta-hover: #c2692f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --kj-bg: #1c1a17;
+    --kj-card-bg: #26231f;
+    --kj-text: #ece6da;
+    --kj-text-muted: #a89d8a;
+    --kj-border: #3a352e;
+    --kj-accent: #7fa4b8;
+    --kj-accent-soft: #2a3336;
+    --kj-cta: #e08a4f;
+    --kj-cta-hover: #f09a5f;
+  }
+}
+
+body {
+  background-color: var(--kj-bg);
+  color: var(--kj-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard",
+    "Malgun Gothic", "Apple SD Gothic Neo", Roboto, sans-serif;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--kj-accent);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+h1 { letter-spacing: -0.01em; }
+
+p { color: var(--kj-text); }
+
+a {
+  color: var(--kj-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--kj-border);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--kj-cta);
+  text-decoration-color: var(--kj-cta);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--kj-border);
+  margin: 2.5rem 0;
+}
+
+blockquote {
+  border-left: 3px solid var(--kj-accent);
+  background: var(--kj-accent-soft);
+  color: var(--kj-text-muted);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+}
+
+code {
+  background: var(--kj-accent-soft);
+  border-radius: 4px;
+}
+
+/* 소개 영역 첫 불릿 목록(핵심 주제 3가지) — 가볍게 태그 느낌 */
+h1 + p + ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 2rem;
+}
+
+h1 + p + ul li {
+  background: var(--kj-accent-soft);
+  color: var(--kj-accent);
+  border: 1px solid var(--kj-border);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.92rem;
+}
+
+/* "최신 글" 목록 — 카드형 */
+h2 + ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+h2 + ul li {
+  background: var(--kj-card-bg);
+  border: 1px solid var(--kj-border);
+  border-radius: 12px;
+  padding: 1rem 1.3rem;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+
+h2 + ul li:hover {
+  box-shadow: 0 6px 16px rgba(47, 72, 88, 0.12);
+  transform: translateY(-2px);
+  border-color: var(--kj-accent);
+}
+
+h2 + ul li a {
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  color: var(--kj-accent);
+}
+
+h2 + ul li a:hover {
+  text-decoration: underline;
+}
+
+/* 구매 CTA — Lemon Squeezy 링크만 버튼화 (index.md 텍스트는 변경하지 않음) */
+a[href*="lemonsqueezy"] {
+  display: inline-block;
+  background: var(--kj-cta);
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  text-decoration: none !important;
+  margin-top: 0.5rem;
+  box-shadow: 0 6px 18px rgba(217, 122, 63, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+a[href*="lemonsqueezy"]:hover {
+  background: var(--kj-cta-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(217, 122, 63, 0.45);
+}
+
+p:has(> a[href*="lemonsqueezy"]:only-child) {
+  text-align: center;
+  margin-top: 1.5rem;
+}
