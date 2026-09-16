@@ -169,3 +169,188 @@ p:has(> a[href*="lemonsqueezy"]:only-child) {
   text-align: center;
   margin-top: 1.5rem;
 }
+
+/* ==========================================================================
+   랜딩페이지 구조 개편 (2026-09-16)
+   목업 이미지 파일 없이 CSS만으로 "노션 창" 미리보기 + 문제공감/기능카드/FAQ 섹션.
+   ========================================================================== */
+
+/* 문제 공감 섹션 */
+.kj-problem {
+  background: var(--kj-accent-soft);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.kj-problem p {
+  margin: 0.35rem 0;
+  color: var(--kj-text);
+}
+
+/* 기능 3가지 — 카드형 */
+.kj-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+@media (max-width: 640px) {
+  .kj-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kj-feature-card {
+  background: var(--kj-card-bg);
+  border: 1px solid var(--kj-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.1rem;
+  text-align: center;
+}
+
+.kj-feature-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.kj-feature-card h3 {
+  font-size: 1rem;
+  margin: 0.25rem 0 0;
+  color: var(--kj-accent);
+}
+
+/* 제품 미리보기 — 노션 창 목업 */
+.kj-window {
+  border: 1px solid var(--kj-border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.5rem 0 2rem;
+  box-shadow: 0 10px 30px rgba(43, 40, 36, 0.08);
+}
+
+.kj-window-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--kj-accent-soft);
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--kj-border);
+}
+
+.kj-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.kj-dot-red { background: #ec6a5e; }
+.kj-dot-yellow { background: #f4bf4f; }
+.kj-dot-green { background: #61c454; }
+
+.kj-window-title {
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--kj-text-muted);
+  font-weight: 600;
+}
+
+.kj-window-body {
+  background: var(--kj-card-bg);
+  padding: 1.25rem 1.1rem;
+}
+
+.kj-panel-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--kj-text-muted);
+  margin: 1rem 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.kj-panel-label:first-child {
+  margin-top: 0;
+}
+
+.kj-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--kj-border);
+  border-radius: 8px;
+}
+
+.kj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.kj-table th,
+.kj-table td {
+  text-align: left;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--kj-border);
+  white-space: nowrap;
+}
+
+.kj-table td {
+  white-space: normal;
+  color: var(--kj-text);
+}
+
+.kj-table th {
+  background: var(--kj-accent-soft);
+  color: var(--kj-accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.kj-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.kj-badge {
+  display: inline-block;
+  background: var(--kj-accent-soft);
+  color: var(--kj-text-muted);
+  border-radius: 999px;
+  padding: 0.15rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.kj-badge-progress {
+  background: #fbeecb;
+  color: #8a6416;
+}
+
+.kj-badge-done {
+  background: #dcefe1;
+  color: #2f6b40;
+}
+
+/* FAQ */
+.kj-faq {
+  margin: 1.25rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.kj-faq-item {
+  border-bottom: 1px solid var(--kj-border);
+  padding-bottom: 0.9rem;
+}
+
+.kj-faq-q {
+  font-weight: 700;
+  color: var(--kj-accent);
+  margin: 0 0 0.3rem;
+}
+
+.kj-faq-a {
+  color: var(--kj-text-muted);
+  margin: 0;
+}
